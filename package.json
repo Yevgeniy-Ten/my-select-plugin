@@ -1,0 +1,16 @@
+{
+  "name": "select-plugin-yevgeniy",
+  "version": "1.0.0",
+  "description": "select-js",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html --open",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yevgeniy",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.27.0"
+  }
+}

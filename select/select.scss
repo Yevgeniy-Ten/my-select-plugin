@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.app {
+  padding-top: 5rem;
+  display: flex;
+  justify-content: center;
+}
+
+$height: 46px;
+.wrap {
+  width: 600px;
+}
+
+.select {
+  font-family: 'Roboto', sans-serif;
+  position: relative;
+  width: 100%;
+  z-index: 10;
+
+  &.open {
+    .select__dropdown {
+      visibility: visible;
+      overflow: visible;
+      top: $height;
+    }
+
+    .select__head {
+      border-bottom: none;
+    }
+
+    .select__down {
+      transform: rotate(-90deg);
+    }
+
+    .select__bg {
+      display: block;
+    }
+  }
+
+  &__head {
+    border: 1px solid #ccc;
+    height: $height;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    cursor: pointer;
+  }
+
+  &__down {
+    transition: 0.3s;
+    padding: 5px 10px;
+    border: 1px solid gray;
+    transform: rotate(90deg);
+    z-index: -1;
+  }
+
+  &__selected {
+    z-index: -1;
+  }
+
+  &__bg {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 40;
+    background: rgba(0, 0, 0, 0);
+  }
+
+  &__dropdown {
+    z-index: 50;
+    visibility: hidden;
+    overflow: hidden;
+    position: absolute;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    top: -$height;
+    left: 0;
+    right: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    transition: 0.3s;
+    box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.3);
+  }
+
+
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__item {
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &.selected {
+      background: #eee;
+    }
+
+    &:hover {
+      background: #eee;
+    }
+  }
+}
